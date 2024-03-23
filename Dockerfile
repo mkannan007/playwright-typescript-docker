@@ -4,19 +4,20 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
+WORKDIR /app
+
+ARG CI=true
+
 # Install Node.js
 RUN apt-get update && apt-get install -y ca-certificates curl gnupg \
   && NODE_MAJOR=20 \
   && curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash - \
   && apt-get update && apt-get install nodejs -y
-RUN node --version
-RUN npm --version
 
 # # Install Google Chrome
 RUN apt-get install -y wget \
   && wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
   && apt-get install -y ./google-chrome-stable_current_amd64.deb
-RUN google-chrome --version
 
 COPY ["package.json", "package-lock.json", "../"]
 
