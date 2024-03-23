@@ -1,0 +1,23 @@
+{
+  "name": "playwright-typescript-docker",
+  "version": "1.0.0",
+  "description": "Open source Playwright TypeScript Docker image",
+  "scripts": {
+    "test": "playwright test",
+    "format": "prettier --write **/*.ts"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "docker"
+  ],
+  "author": "Kannan",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.30",
+    "prettier": "^3.2.5",
+    "tsconfig-paths": "^4.2.0"
+  }
+}

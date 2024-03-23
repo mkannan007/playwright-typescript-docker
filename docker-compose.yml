@@ -1,0 +1,10 @@
+version: "3"
+services:
+  automated-browser-tests:
+    build:
+      context: .
+    environment:
+      - TAG=${TAG}
+    volumes:
+      - ./package.json:/package.json
+      - ./package-lock.json:/package-lock.json
