@@ -27,8 +27,8 @@ Clone the git-hub repository to your local machine,
 ## Install Node Module dependencies
 
 Goto Terminal and Run the following commands,
-`npm install` to install all the node module dependencies
-`npx playwright install` to install the playwright browsers
+1.  `npm install` to install all the node module dependencies
+2.  `npx playwright install` to install the playwright browsers
 
 ## Run Automated Test using local terminal
 
@@ -41,7 +41,7 @@ Goto Terminal and Run the following command,
 Goto Terminal and Run the following command,
 
 1.  Make sure docker daemon is running (open Docker Deskop application)
-1.  `$env:TAG="@test"; docker compose up --build --abort-on-container-exit` to run the tests in local (windows powershell)
+2.  `$env:TAG="@test"; docker compose up --build --abort-on-container-exit` to run the tests in local (windows powershell)
 
 ## Project Folder Structure
 
