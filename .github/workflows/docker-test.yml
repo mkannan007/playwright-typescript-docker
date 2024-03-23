@@ -2,8 +2,6 @@ name: Playwright Docker Test
 
 on:
     workflow_dispatch:
-    push:
-        branches: [main]
 
 jobs:
     docker-test:
@@ -26,20 +24,6 @@ jobs:
             - name: Run Playwright Docker Test
               if: always()
               run: TAG=@test docker compose up --build --abort-on-container-exit
-
-            - name: Sleep for 60 seconds
-              run: sleep 60s
-              shell: bash
-
-            - name: Upload Test Artifacts
-              uses: actions/upload-artifact@v4
-              if: always()
-              with:
-                  name: Test Artifacts
-                  path: |
-                      target
-                      html
-                  retention-days: 10
 
             - name: Stop Docker Container
               if: always()
