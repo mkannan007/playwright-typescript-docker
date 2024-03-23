@@ -27,6 +27,10 @@ jobs:
               if: always()
               run: TAG=@test docker compose up --build --abort-on-container-exit
 
+            - name: Sleep for 60 seconds
+              run: sleep 60s
+              shell: bash
+
             - name: Upload Test Artifacts
               uses: actions/upload-artifact@v4
               if: always()
