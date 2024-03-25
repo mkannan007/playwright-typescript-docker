@@ -6,5 +6,6 @@ services:
     environment:
       - TAG=${TAG}
     volumes:
-      - ./package.json:/package.json
-      - ./package-lock.json:/package-lock.json
+      - ./:/e2e
+      - ./package.json:/e2e/package.json
+      - ./package-lock.json:/e2e/package-lock.json

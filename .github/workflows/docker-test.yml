@@ -25,6 +25,16 @@ jobs:
               if: always()
               run: TAG=@test docker compose up --build --abort-on-container-exit
 
+            - name: Upload Test Artifacts
+              uses: actions/upload-artifact@v4
+              if: always()
+              with:
+                  name: Test Artifacts
+                  path: |
+                      e2e/target
+                      e2e/html
+                  retention-days: 10
+
             - name: Stop Docker Container
               if: always()
               run: docker compose down --remove-orphans
