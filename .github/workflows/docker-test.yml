@@ -31,8 +31,8 @@ jobs:
               with:
                   name: Test Artifacts
                   path: |
-                      e2e/target
-                      e2e/html
+                      docker/target
+                      docker/html
                   retention-days: 10
 
             - name: Stop Docker Container
